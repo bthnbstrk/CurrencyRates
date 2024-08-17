@@ -2,13 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class Currency extends Authenticatable
+
+class Currency extends Model
 {
     protected $table = 'tbl_currencies';
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'symbol',
+        'short_code',
+        'value',
+        'provider',
+    ];
+
+
 
 }
