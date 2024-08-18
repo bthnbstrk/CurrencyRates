@@ -5,7 +5,7 @@ namespace App\Services\FetchCurrency\Adapters;
 use App\Services\FetchCurrency\Interfaces\ICurrencyProvider;
 use App\Services\FetchCurrency\Providers\ProviderA;
 
-class AProviderAdapterI implements ICurrencyProvider
+class AProviderAdapter implements ICurrencyProvider
 {
     function saveData()
     {

@@ -46,7 +46,7 @@ class ProviderA extends Provider
             $this->save($data);
         }
 
-        Redis::hmset($this->getProviderName(),$redisData);
+        Redis::hmset('PROVIDER_'.$this->getProviderName(),$redisData);
         Log::info($this->getProviderName() . " was written to redis " . json_encode($redisData));
     }
 

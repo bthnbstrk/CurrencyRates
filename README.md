@@ -18,7 +18,6 @@ This project takes currency data from different providers and saves it to the da
 
 - Connect to the container terminal named with web and app and run this command 'php artisan app:fetch-currency-data'
 
-- If you want to use this project without dockerized you can download https://github.com/bthnbstrk/CurrencyRates/releases/tag/without-dockerfile this tag.
 ## Screenshots
 
 ![screen shot for project](https://github.com/bthnbstrk/CurrencyRates/blob/main/currency_image.png)
