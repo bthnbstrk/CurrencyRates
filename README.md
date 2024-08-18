@@ -1,10 +1,6 @@
 # Description
 
----
-
 This project takes currency data from different providers and saves it to the database and saves the last retrieved data to redis. On the homepage, it reads the last data from redis and prints the lowest one to the screen.
-
---- 
 
 ## Requirements
 
@@ -22,4 +18,7 @@ This project takes currency data from different providers and saves it to the da
 
 - Connect to the container terminal named with web and app and run this command 'php artisan app:fetch-currency-data'
 
+## Screenshots
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
