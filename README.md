@@ -20,5 +20,5 @@ This project takes currency data from different providers and saves it to the da
 
 ## Screenshots
 
-![alt text](https://github.com/bthnbstrk/CurrencyRates/blob/main/currency_image.png)
+![screen shot for project](https://github.com/bthnbstrk/CurrencyRates/blob/main/currency_image.png)
 
