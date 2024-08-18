@@ -1,6 +1,6 @@
 # Description
 
-This project takes currency data from different providers and saves it to the database and saves the last retrieved data to redis. On the homepage, it reads the last data from redis and prints the lowest one to the screen. Adapter pattern used for providers.
+This project takes currency data from different providers and saves it to the database and saves the last retrieved data to redis. On the homepage, it reads the last data from redis and prints the lowest one to the screen. Adapter pattern used for providers. Project development with Laravel.
 
 ## Requirements
 
