@@ -88,7 +88,6 @@
 <div class="container">
     <div class="header">
         <h1>Döviz Kurları</h1>
-        <p>Son Güncelleme: <span id="last-update"></span></p>
     </div>
     <div class="rate-cards" id="exchange-rates">
        @forelse($currencies as $currencyCode => $value)

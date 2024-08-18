@@ -2,7 +2,7 @@
 
 namespace App\Services\FetchCurrency\Interfaces;
 
-interface CurrencyProvider
+interface ICurrencyProvider
 {
     public function saveData();
 }

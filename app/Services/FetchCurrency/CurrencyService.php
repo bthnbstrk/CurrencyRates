@@ -2,12 +2,12 @@
 
 namespace App\Services\FetchCurrency;
 
-use App\Services\FetchCurrency\Interfaces\CurrencyProvider;
+use App\Services\FetchCurrency\Interfaces\ICurrencyProvider;
 use Illuminate\Support\Facades\Redis;
 
 class CurrencyService
 {
-    public static function saveCurrencyData(CurrencyProvider $currencyProvider): void
+    public static function saveCurrencyData(ICurrencyProvider $currencyProvider): void
     {
         $currencyProvider->saveData();
     }

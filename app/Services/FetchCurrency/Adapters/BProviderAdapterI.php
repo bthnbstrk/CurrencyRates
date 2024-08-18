@@ -2,10 +2,10 @@
 
 namespace App\Services\FetchCurrency\Adapters;
 
-use App\Services\FetchCurrency\Interfaces\CurrencyProvider;
+use App\Services\FetchCurrency\Interfaces\ICurrencyProvider;
 use App\Services\FetchCurrency\Providers\ProviderB;
 
-class BProviderAdapter implements CurrencyProvider
+class BProviderAdapterI implements ICurrencyProvider
 {
     function saveData()
     {

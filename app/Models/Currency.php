@@ -16,6 +16,4 @@ class Currency extends Model
         'provider',
     ];
 
-
-
 }

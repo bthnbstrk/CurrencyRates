@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Services\FetchCurrency\Adapters\AProviderAdapter;
-use App\Services\FetchCurrency\Adapters\BProviderAdapter;
+use App\Services\FetchCurrency\Adapters\AProviderAdapterI;
+use App\Services\FetchCurrency\Adapters\BProviderAdapterI;
 use App\Services\FetchCurrency\CurrencyService;
 use Illuminate\Console\Command;
 
@@ -36,9 +36,9 @@ class FetchCurrencyData extends Command
             $progressBar->setFormat('debug');
             $progressBar->start();
 
-            CurrencyService::saveCurrencyData(new AProviderAdapter());
+            CurrencyService::saveCurrencyData(new AProviderAdapterI());
             $progressBar->advance();
-            CurrencyService::saveCurrencyData(new BProviderAdapter());
+            CurrencyService::saveCurrencyData(new BProviderAdapterI());
             $progressBar->advance();
 
             $progressBar->finish();
