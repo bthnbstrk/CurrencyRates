@@ -17,7 +17,7 @@ class ProviderB extends Provider
             $response = Http::get($this->getApiUrl());
             return $response->json();
         } catch (\Exception $e) {
-            return $e->getMessage();
+            Log::error($e->getMessage());
         }
     }
 
@@ -25,11 +25,11 @@ class ProviderB extends Provider
     {
         try {
             $currency = new Currency();
-            $currency->name = $data['name'];
+            $currency->name = isset($data['name']) ?? $data['name'];
             $currency->provider = $this->getProviderName();
-            $currency->symbol = $data['symbol'];
-            $currency->short_code = $data['shortCode'];
-            $currency->value = $data['price'];
+            $currency->symbol =  isset($data['symbol']) ?? $data['symbol'];
+            $currency->short_code = isset($data['shortCode']) ?? $data['shortCode'];
+            $currency->value = isset($data['price']) ?? $data['price'];
             $currency->save();
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -47,5 +47,6 @@ class ProviderB extends Provider
         }
 
         Redis::hmset($this->getProviderName(), $redisData);
+        Log::info($this->getProviderName() . " was written to redis " . json_encode($redisData));
     }
 }

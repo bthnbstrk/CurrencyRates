@@ -2,6 +2,8 @@
 
 namespace App\Services\FetchCurrency\Entities;
 
+use Illuminate\Support\Facades\Log;
+
 class Provider
 {
     private string $apiUrl;
@@ -11,6 +13,7 @@ class Provider
     {
         $this->apiUrl = $apiUrl;
         $this->providerName = $providerName;
+        Log::info($providerName. " called");
     }
 
     /**

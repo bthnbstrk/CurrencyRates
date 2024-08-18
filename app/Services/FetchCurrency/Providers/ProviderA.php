@@ -17,18 +17,18 @@ class ProviderA extends Provider
             $response = Http::get($this->getApiUrl());
             return $response->json();
         } catch (\Exception $e) {
-            return $e->getMessage();
+            Log::error($e->getMessage());
         }
     }
     public function save($data)
     {
         try {
             $currency = new Currency();
-            $currency->name = $data['fullname'];
+            $currency->name = isset($data['fullname']) ?? $data['fullname'];
             $currency->provider = $this->getProviderName();
-            $currency->symbol = $data['symbl'];
-            $currency->short_code = $data['shrtCode'];
-            $currency->value = $data['amount'];
+            $currency->symbol = isset($data['symbl']) ?? $data['symbl'];
+            $currency->short_code =isset($data['shrtCode']) ?? $data['shrtCode'];
+            $currency->value = isset($data['amount']) ?? $data['amount'];
             $currency->save();
         } catch (\Exception $e) {
             Log::error($e->getMessage());
@@ -45,6 +45,7 @@ class ProviderA extends Provider
         }
 
         Redis::hmset($this->getProviderName(),$redisData);
+        Log::info($this->getProviderName() . " was written to redis " . json_encode($redisData));
     }
 
 }
