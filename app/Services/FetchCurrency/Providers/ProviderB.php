@@ -25,12 +25,14 @@ class ProviderB extends Provider
     {
         try {
             $currency = new Currency();
-            $currency->name = isset($data['name']) ?? $data['name'];
+            $currency->name = $data['name'] ?? '';
             $currency->provider = $this->getProviderName();
-            $currency->symbol =  isset($data['symbol']) ?? $data['symbol'];
-            $currency->short_code = isset($data['shortCode']) ?? $data['shortCode'];
-            $currency->value = isset($data['price']) ?? $data['price'];
+            $currency->symbol =  $data['symbol'] ?? '';
+            $currency->short_code = $data['shortCode'] ?? '';
+            $currency->value = $data['price'] ?? '0';
             $currency->save();
+
+            Log::info($this->getProviderName() ."-". $currency->name. " written to DB");
         } catch (\Exception $e) {
             Log::error($e->getMessage());
         }
