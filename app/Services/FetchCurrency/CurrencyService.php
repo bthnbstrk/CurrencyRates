@@ -41,7 +41,7 @@ class CurrencyService
         return $currencyData;
     }
 
-    public static function calculate() : array
+    public static function foundLowCurrencyFromRedis() : array
     {
         $data = self::fetchDataFromRedis();
         $minValues = [];
